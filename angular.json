@@ -25,9 +25,15 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/style.css",
+              "src/assets/css/materialize/css/materialize.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.js",
+              "src/assets/plugins/materialize-css/js/materialize.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -91,9 +97,14 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/plugins/bootstrap/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.js",
+              "src/assets/plugins/materialize-css/js/materialize.js"
+            ]
           }
         },
         "lint": {

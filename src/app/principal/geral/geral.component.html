@@ -1,1 +1,104 @@
-<p>geral works!</p>
+
+<nav class="blue darken-2">
+    <div class="nav-wrapper">
+        <p class="brand-logo left">Smartnote</p>
+    </div>
+</nav>
+
+<div>
+    <div class="row">
+        <div class="col s12 m12">
+            <h5><a routerLink="categoria">Matérias</a></h5>
+        </div>
+    </div>
+</div>
+
+<!-- ultimas matérias -->
+<div>
+    <div class="row">
+
+        <div class="col s6 m2">
+            <div class="card">
+                <a routerLink="categoria">
+                    <div class="card-image">
+                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
+                        <span class="card-title">Matéria 1</span>
+                    </div>
+                </a>
+                <a routerLink="anotacao/add" style="position: absolute; top: 116px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
+                    <i class="material-icons">add</i>
+                </a>
+                <div class="card-content">
+                    <p>Descrição da matéria.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6 m2">
+            <div class="card">
+                <a routerLink="categoria">
+                    <div class="card-image">
+                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
+                        <span class="card-title">Matéria 2</span>
+                    </div>
+                </a>
+                <a routerLink="anotacao/add" style="position: absolute; top: 116px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
+                    <i class="material-icons">add</i>
+                </a>
+                <div class="card-content">
+                    <p>Descrição da matéria.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div>
+    <div class="row">
+        <div class="col s12 m12">
+            <h5>Últimas anotações</h5>
+        </div>
+    </div>
+</div>
+
+<!-- Lista de anotações -->
+<div>
+    <ul class="collection">
+        
+        <li class="collection-item avatar" style="min-height: 55px !important;">
+            <a routerLink="anotacao">
+                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+                <span class="title">Anotação 1</span>
+                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
+            </a>
+        </li>
+        
+        <li class="collection-item avatar" style="min-height: 55px !important;">
+            <a routerLink="anotacao">
+                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+                <span class="title">Anotação 2</span>
+                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
+            </a>
+        </li>
+        
+        <li class="collection-item avatar" style="min-height: 55px !important;">
+            <a routerLink="anotacao">
+                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+                <span class="title">Anotação 3</span>
+                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
+            </a>
+        </li>
+        
+        <li class="collection-item avatar" style="min-height: 55px !important;">
+            <a routerLink="anotacao">
+                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+                <span class="title">Anotação 4</span>
+                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
+            </a>
+        </li>
+        
+
+    </ul>
+</div>

@@ -5,7 +5,7 @@ import { ListaComponent } from './lista/lista.component';
 import { AddComponent } from './add/add.component';
 
 const categoriaRoutes = [
-    {path: '', component: CategoriaComponent },
+    {path: '', component: ListaComponent },
     {path: 'lista', component: ListaComponent},
     {path: 'add', component: AddComponent}
 ];

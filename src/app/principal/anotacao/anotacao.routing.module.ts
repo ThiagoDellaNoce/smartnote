@@ -5,7 +5,7 @@ import { ListaComponent } from './lista/lista.component';
 import { AddComponent } from './add/add.component';
 
 const anotacaoRoutes = [
-    {path: '', component: AnotacaoComponent },
+    {path: '', component: ListaComponent },
     {path: 'lista', component: ListaComponent},
     {path: 'add', component: AddComponent}
 ];
