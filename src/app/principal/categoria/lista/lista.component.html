@@ -1,6 +1,6 @@
 <nav class="blue darken-2">
     <div class="nav-wrapper">
-        <p class="brand-logo left">Smartnote</p>
+        <a routerLink="/principal" class="brand-logo">Smartnote</a>
         <a routerLink="/principal"><i class="material-icons" style="left: 10px; position: absolute;">arrow_back_ios</i></a>
     </div>
 </nav>
@@ -19,64 +19,25 @@
     <div class="row">
 
         <div class="col s6 m2">
-            <a href="materia.html">
             <div class="card">
+                <a routerLink="/principal/categoria">
                     <div class="card-image">
                         <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
                         <span class="card-title">Matéria 1</span>
-                        <a href="../anotacao/add-anotacao.html" class="btn-floating halfway-fab waves-effect waves-light blue accent-1"><i class="material-icons">add</i></a>
                     </div>
-                    <div class="card-content">
-                        <p>Descrição da matéria.</p>
-                    </div>
+                </a>
+
+                <a routerLink="/principal/anotacao/add" style="position: absolute; top: 116px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
+                    <i class="material-icons">add</i>
+                </a>
+
+                <div class="card-content">
+                    <p>Descrição da matéria.</p>
                 </div>
-            </a>
+            </div>
         </div>
 
-        <div class="col s6 m2">
-            <a href="materia.html">
-            <div class="card">
-                    <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
-                        <span class="card-title">Matéria 2</span>
-                        <a href="../anotacao/add-anotacao.html" class="btn-floating halfway-fab waves-effect waves-light blue accent-1"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                        <p>Descrição da matéria.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col s6 m2">
-            <a href="materia.html">
-            <div class="card">
-                    <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
-                        <span class="card-title">Matéria 3</span>
-                        <a href="../anotacao/add-anotacao.html" class="btn-floating halfway-fab waves-effect waves-light blue accent-1"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                        <p>Descrição da matéria.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col s6 m2">
-            <a href="materia.html">
-            <div class="card">
-                    <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
-                        <span class="card-title">Matéria 4</span>
-                        <a href="../anotacao/add-anotacao.html" class="btn-floating halfway-fab waves-effect waves-light blue accent-1"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                        <p>Descrição da matéria.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+        
 
 
     </div>
@@ -85,7 +46,7 @@
 
 <!-- Floating button -->
 <div class="fixed-action-btn">
-    <a href="add-materia.html" class="btn-floating btn-large blue accent-1">
+    <a routerLink="/principal/categoria/add" class="btn-floating btn-large blue accent-1">
         <i class="large material-icons">add</i>
     </a>
 </div>
