@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $:any;
 
 @Component({
   selector: 'app-lista',
@@ -14,10 +13,6 @@ export class ListaComponent implements OnInit {
   }
 
   ngOnInit() {
-    let el = $('.tabs').tabs();
-    // let instance = M.Tabs.init(el, {});
-
-    $(".carousel").carousel();
   }
 
 }
