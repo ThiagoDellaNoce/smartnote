@@ -1,7 +1,7 @@
 <nav class="blue darken-2">
     <div class="nav-wrapper">
-        <a href="../index.html" class="brand-logo">Smartnote</a>
-        <a href="materias.html"><i class="material-icons" style="left: 10px; position: absolute;">arrow_back_ios</i></a>
+        <a routerLink="/principal" class="brand-logo">Smartnote</a>
+        <a routerLink="/principal/categoria/lista"><i class="material-icons" style="left: 10px; position: absolute;">arrow_back_ios</i></a>
     </div>
 </nav>
 
@@ -11,7 +11,7 @@
             <div class="parallax"><img style="opacity: 1;" src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg"></div>
         </div>
         <div class="col s12 m12">
-            <h5><a href="#!">Matéria 1</a></h5>
+            <h5>Matéria 1</h5>
         </div>
     </div>
 </div>
@@ -21,29 +21,12 @@
     <ul class="collection">
     
         <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a href="../anotacao/anotacao.html">
+            <a routerLink="/principal/anotacao">
                 <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
                 <span class="title">Anotação 1</span>
-                <a href="../anotacao/anotacao.html" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
+                <a class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
             </a>
         </li>
-    
-        <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a href="../anotacao/anotacao.html">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 2</span>
-                <a href="../anotacao/anotacao.html" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
-            </a>
-        </li>
-    
-        <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a href="../anotacao/anotacao.html">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 3</span>
-                <a href="../anotacao/anotacao.html" class="secondary-content" style="color:#82b1ff"><i class="material-icons">send</i></a>
-            </a>
-        </li>
-    
 
     </ul>
 </div>
@@ -54,7 +37,7 @@
 
 <!-- Floating button -->
 <div class="fixed-action-btn">
-    <a href="../anotacao/add-anotacao.html" class="btn-floating btn-large blue accent-1">
+    <a routerLink="/principal/anotacao/add" class="btn-floating btn-large blue accent-1">
         <i class="large material-icons">add</i>
     </a>
 </div>
