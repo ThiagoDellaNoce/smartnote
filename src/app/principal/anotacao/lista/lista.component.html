@@ -1,1 +1,29 @@
-<p>App lsita anotacao</p>
+
+<nav class="blue darken-2">
+    <div class="nav-wrapper">
+        <p class="brand-logo">Smartnote</p>
+        <a routerLink="/principal"><i class="material-icons" style="left: 10px; position: absolute;">arrow_back_ios</i></a>
+    </div>
+</nav>
+
+<!-- Lista de anotações -->
+<div>
+        <ul class="collection">
+            
+            <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes">
+                <a routerLink="anotacao">
+                    <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+                    <span class="title">{{ anotacao.nome }}</span>
+                    <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
+                </a>
+            </li>
+    
+        </ul>
+    </div>
+    
+    <!-- Floating button -->
+    <div class="fixed-action-btn">
+        <a routerLink="/principal/anotacao/add" class="btn-floating btn-large blue accent-1">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
