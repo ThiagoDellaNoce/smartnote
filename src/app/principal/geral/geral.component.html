@@ -17,44 +17,26 @@
 <div>
     <div class="row">
 
-        <div class="col s6 m2">
-            <div class="card">
-                <a routerLink="categoria">
+        <div class="col s6 m2" *ngFor="let categoria of listCategorias | slice:0:2">
+            <div class="card" >
+                <!-- <span>{{ categoria.id }}</span> -->
+
+                <a routerLink="/principal/categoria/">
                     <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
-                        <span class="card-title">Matéria 1</span>
+                        <img src="https://library.harvard.edu/sites/default/files/styles/carousel_1200_x_900/public/poets_blue.jpg?itok=jxricHTp">
+                        <span class="card-title">{{ categoria.nome }}</span>
                     </div>
                 </a>
 
-                <a routerLink="anotacao/add" style="position: absolute; top: 116px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
+                <a routerLink="/principal/anotacao/add" style="position: absolute; bottom: 50px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
                     <i class="material-icons">add</i>
                 </a>
 
                 <div class="card-content">
-                    <p>Descrição da matéria.</p>
+                    <p>{{categoria.professor}}</p>
                 </div>
             </div>
         </div>
-
-        <div class="col s6 m2">
-            <div class="card">
-                <a routerLink="categoria">
-                    <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
-                        <span class="card-title">Matéria 2</span>
-                    </div>
-                </a>
-
-                <a routerLink="anotacao/add" style="position: absolute; top: 116px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
-                    <i class="material-icons">add</i>
-                </a>
-
-                <div class="card-content">
-                    <p>Descrição da matéria.</p>
-                </div>
-            </div>
-        </div>
-
 
     </div>
 </div>
@@ -71,37 +53,20 @@
 <div>
     <ul class="collection">
         
-        <li class="collection-item avatar" style="min-height: 55px !important;">
+        <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes">
             <a routerLink="anotacao">
                 <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 1</span>
+                <span class="title">{{ anotacao.nome }}</span>
                 <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
             </a>
         </li>
-        
-        <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a routerLink="anotacao">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 2</span>
-                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
-            </a>
-        </li>
-        
-        <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a routerLink="anotacao">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 3</span>
-                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
-            </a>
-        </li>
-        
-        <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a routerLink="anotacao">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 4</span>
-                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
-            </a>
-        </li>
-        
+
     </ul>
+</div>
+
+<!-- Floating button -->
+<div class="fixed-action-btn">
+    <a routerLink="/principal/anotacao/add" class="btn-floating btn-large blue accent-1">
+        <i class="large material-icons">add</i>
+    </a>
 </div>

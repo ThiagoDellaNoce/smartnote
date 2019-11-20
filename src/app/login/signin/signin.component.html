@@ -7,33 +7,20 @@
                 <h4 class="center">Smartnote</h4>	 
                 
                 <div class="row">
-                    <form class="col s12 m12">
                         
-                        <div class="row">
-                            
-                            <div class="input-field col s12 m12">
-                                <input id="login" type="text" class="validate">
-                                <label for="login" class="">Login</label>
-                            </div>
+                    <div class="container">
 
-                            <div class="input-field col s12 m12">
-                                <input id="password" type="password" class="validate">
-                                <label for="password">Senha</label>
+                        <h5>Faça Login:</h5>
+                        <div (click)="loginWithGoogle()" class="google-btn">
+                            <div class="google-icon-wrapper">
+                                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
                             </div>
-
-                            <div class="s12 m12 center">
-                                <a routerLink="/principal" class="btn waves-effect waves-light center s12 m12 btn-login light-blue darken-2">
-                                    Entrar
-                                </a>
-                                <span class="right link-forgotPassword">Esqueceu a senha?</span>
-                            </div>
-
+                            <p class="btn-text"><b>Sign in with google</b></p>
                         </div>
-                        
-                    </form>
-                </div><!--row-->
-                    
 
+                    </div>
+                        
+                </div><!--row-->
             </div><!--card-->
 
 

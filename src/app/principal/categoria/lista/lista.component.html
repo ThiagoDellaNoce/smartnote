@@ -18,27 +18,26 @@
     
     <div class="row">
 
-        <div class="col s6 m2">
-            <div class="card">
-                <a routerLink="/principal/categoria">
+        <div class="col s6 m2" *ngFor="let categoria of list">
+            <div class="card" >
+                <!-- <span>{{ categoria.id }}</span> -->
+
+                <a routerLink="/principal/categoria/">
                     <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg">
-                        <span class="card-title">Matéria 1</span>
+                        <img src="https://library.harvard.edu/sites/default/files/styles/carousel_1200_x_900/public/poets_blue.jpg?itok=jxricHTp">
+                        <span class="card-title">{{ categoria.nome }}</span>
                     </div>
                 </a>
 
-                <a routerLink="/principal/anotacao/add" style="position: absolute; top: 116px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
+                <a routerLink="/principal/anotacao/add" style="position: absolute; bottom: 50px;" class="btn-floating halfway-fab waves-effect waves-light blue accent-1">
                     <i class="material-icons">add</i>
                 </a>
 
                 <div class="card-content">
-                    <p>Descrição da matéria.</p>
+                    <p>{{categoria.professor}}</p>
                 </div>
             </div>
         </div>
-
-        
-
 
     </div>
 

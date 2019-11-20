@@ -18,6 +18,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { AppRoutingModule } from './app.routing.module';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { AppRoutingModule } from './app.routing.module';
     AppRoutingModule
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
-  providers: [],
+  providers: [AngularFireAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
