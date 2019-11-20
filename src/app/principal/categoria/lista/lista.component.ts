@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 @Component({
@@ -11,10 +12,15 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class ListaComponent implements OnInit {
 
   list: any;
-  constructor(private firestore: AngularFirestore) { }
+  user: any;
+  constructor(
+    private firestore: AngularFirestore,
+    public afAuth: AngularFireAuth) {
+    this.user = this.afAuth.auth.currentUser;
+  }
 
   ngOnInit() {
-    this.firestore.collection("categorias").snapshotChanges().subscribe(actionArray => {
+    this.firestore.collection("categorias").doc("users").collection(this.user.uid).snapshotChanges().subscribe(actionArray => {
       this.list = actionArray.map(item => {
         return {
           id: item.payload.doc.id,

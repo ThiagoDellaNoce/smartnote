@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-geral',
@@ -11,7 +12,11 @@ export class GeralComponent implements OnInit {
 
   listCategorias: any;
   listAnotacoes: any;
-  constructor(private firestore: AngularFirestore) { }
+  user: any;
+  constructor(private firestore: AngularFirestore,
+    public afAuth: AngularFireAuth) { 
+      this.user = this.afAuth.auth.currentUser;
+    }
 
   ngOnInit() {
     this.carregaMaterias();
@@ -19,7 +24,7 @@ export class GeralComponent implements OnInit {
   }
 
   carregaMaterias() {
-    this.firestore.collection("categorias").snapshotChanges().subscribe(actionArray => {
+    this.firestore.collection("categorias").doc("users").collection(this.user.uid).snapshotChanges().subscribe(actionArray => {
       this.listCategorias = actionArray.map(item => {
         return {
           id: item.payload.doc.id,

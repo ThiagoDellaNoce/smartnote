@@ -11,7 +11,6 @@ import { AddComponent } from './add/add.component';
 
 import { AnotacaoRoutingModule } from './anotacao.routing.module';
 
-
 @NgModule({
   imports: [
     CommonModule,

@@ -30,8 +30,11 @@
                     </div>
                     
                     <div class="input-field col s12 m12">
-                        <input id="categoria" type="text" class="validate">
-                        <label for="categoria">Categoria</label>
+                        <select class="form-control">
+                            <option *ngFor="let item of list" value= {{item.id}}>
+                                {{item.nome}}
+                            </option>
+                        </select>
                     </div>
 
                 </div>

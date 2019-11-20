@@ -1,6 +1,6 @@
-import { Component, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Component } from '@angular/core';
 
+declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +8,5 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class AppComponent {
   title = 'smartnote';
-
+  
 }

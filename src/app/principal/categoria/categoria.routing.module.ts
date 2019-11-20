@@ -7,7 +7,8 @@ import { AddComponent } from './add/add.component';
 const categoriaRoutes = [
     {path: '', component: CategoriaComponent },
     {path: 'lista', component: ListaComponent },
-    {path: 'add', component: AddComponent }
+    {path: 'add', component: AddComponent },
+    { path: ':id', component: CategoriaComponent, children:[ { path: '', component: CategoriaComponent } ] }
 ];
 
 @NgModule({

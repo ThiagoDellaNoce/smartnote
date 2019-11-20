@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare var $:any;
 
@@ -9,12 +10,23 @@ declare var $:any;
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  private sub: any;
+  id: any;
+
+  constructor(private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
-    var elems = document.querySelectorAll('.parallax');
-    // var instances = M.Parallax.init(elems, {});
     $('.carousel').carousel();
+
+    this.sub = this.route.params.subscribe(params => {
+      const param = params['id'];
+      if (param) {
+        this.id = params['id'];
+      } else {
+        this.router.navigate(['/principal']);
+      }
+    });
   }
 
 }
