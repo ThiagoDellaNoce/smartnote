@@ -11,8 +11,8 @@
 
             <div class="row">
                 <div class="container">
-                    <h4 class="center">Anotação 1</h4>
-                    <h5 style="float: right">Matéria 1</h5>
+                    <h4 class="center">{{item.nome}}</h4>
+                    <h5 style="float: right">{{itemCat?.nome}}</h5>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                 </div>
 
                 <div id="test1" class="col s12">
-                    
+
                     <div class="row">
                         <div class="container">
                             <div class="col s12">
@@ -36,15 +36,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="container">
-                            <div class="col s12">
-                                <img class="materialboxed" data-caption="A picture" src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg" style="max-width:100%">
-                            </div>
-                        </div>
-                    </div>
-                                    
 
                 </div>
 
@@ -52,28 +43,18 @@
                     <div class="row">
                         <div class="container">
                             <p style="text-align:justify">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
-                                est quam, tempus tincidunt orci sed, egestas blandit dolor. 
-                                Praesent tincidunt sem justo, vel cursus justo rutrum vel.
-                                Praesent tempus ex ut tristique dictum. Vivamus auctor
-                                molestie ipsum eu semper. Maecenas mattis suscipit enim
-                                at fermentum. Integer pretium diam eget porta lobortis.
-                                Nullam quis ligula et magna sagittis varius ac eu leo.
-                                Vivamus sem eros, volutpat sit amet dolor nec, dictum
-                                ultrices eros. Maecenas quis arcu ipsum. Curabitur
-                                vestibulum erat est, vitae ultrices ante luctus et. Ut 
-                                lacinia dui sed felis faucibus, vel pretium urna varius.
+                                {{ item.texto }}
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div id="test3" class="col s12">
-                    
+
                     <h5 style="text-align: center;">Em breve!</h5>
-                    
+
                 </div>
-                
+
             <!-- <div class="row">
                 <div class="container">
                     <p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed est quam, tempus tincidunt orci sed, egestas blandit dolor. Praesent tincidunt sem justo, vel cursus justo rutrum vel. Praesent tempus ex ut tristique dictum. Vivamus auctor molestie ipsum eu semper. Maecenas mattis suscipit enim at fermentum. Integer pretium diam eget porta lobortis. Nullam quis ligula et magna sagittis varius ac eu leo. Vivamus sem eros, volutpat sit amet dolor nec, dictum ultrices eros. Maecenas quis arcu ipsum. Curabitur vestibulum erat est, vitae ultrices ante luctus et. Ut lacinia dui sed felis faucibus, vel pretium urna varius.</p>

@@ -18,6 +18,8 @@ export class CategoriaComponent implements OnInit {
   user;
 
   item: any;
+  listAnotacoes: any;
+  itemsAnotacoes= [];
 
   constructor(private route: ActivatedRoute,
       private router: Router,
@@ -43,14 +45,22 @@ export class CategoriaComponent implements OnInit {
   }
 
   getData() {
+    let context = this;
       //database
       this.db.object('categorias/users/' + this.user.uid + "/" + this.id).valueChanges().subscribe(item => {
         this.item = item;
-      });
 
-      // firestore
-    // this.itemDoc = this.afs.doc<Item>('categorias/users/');
-    // this.item = this.itemDoc.valueChanges();
+          //database
+          this.db.list('anotacoes/users/' + this.user.uid + "/").valueChanges().subscribe(item => {
+            this.listAnotacoes = item;
+
+            for(let i =0; i <= this.listAnotacoes.length -1; i++) {
+              if(this.listAnotacoes[i].categoriaId == context.id) {
+                this.itemsAnotacoes.push(this.listAnotacoes[i]);
+              }
+            }
+          });
+        });
 
   }
 }

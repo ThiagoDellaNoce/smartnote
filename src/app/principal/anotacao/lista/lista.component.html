@@ -8,19 +8,25 @@
 
 <!-- Lista de anotações -->
 <div>
-        <ul class="collection">
-            
-            <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes">
-                <a routerLink="anotacao">
-                    <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                    <span class="title">{{ anotacao.nome }}</span>
-                    <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
-                </a>
-            </li>
-    
-        </ul>
-    </div>
-    
+  <span *ngIf="!listAnotacoes" style="text-align: center;">
+      <p>
+          Nenhuma anotação<br>
+          <a routerLink="/principal/categoria/add">criar anotação</a>
+      </p>
+  </span>
+  <ul class="collection">
+
+      <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes">
+          <a routerLink="/principal/anotacao/{{ anotacao.id}}">
+              <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+              <span class="title">{{ anotacao.nome }}</span>
+              <a routerLink="/principal/anotacao/{{ anotacao.id}}" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
+          </a>
+      </li>
+
+  </ul>
+</div>
+
     <!-- Floating button -->
     <div class="fixed-action-btn">
         <a routerLink="/principal/anotacao/add" class="btn-floating btn-large blue accent-1">

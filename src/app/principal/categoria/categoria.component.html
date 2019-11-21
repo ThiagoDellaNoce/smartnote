@@ -11,8 +11,8 @@
             <div class="parallax"><img style="opacity: 1;" src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg"></div>
         </div>
         <div class="col s12 m12">
-            <h5>{{ item.nome }}</h5>
-            <p>{{item.professor}}</p>
+            <h5>{{ item?.nome }}</h5>
+            <p>{{item?.professor}}</p>
         </div>
     </div>
 </div>
@@ -21,13 +21,13 @@
 <div>
     <ul class="collection">
 
-        <li class="collection-item avatar" style="min-height: 55px !important;">
-            <a routerLink="/principal/anotacao">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">Anotação 1</span>
-                <a class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
-            </a>
-        </li>
+      <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of itemsAnotacoes">
+        <a routerLink="/principal/anotacao/{{ anotacao?.id}}">
+            <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+            <span class="title">{{ anotacao?.nome }}</span>
+            <a routerLink="/principal/anotacao/{{ anotacao?.id}}" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
+        </a>
+      </li>
 
     </ul>
 </div>

@@ -29,33 +29,13 @@ export class GeralComponent implements OnInit {
     this.db.list('categorias/users/' + this.user.uid + "/").valueChanges().subscribe(item => {
       this.listCategorias = item;
     });
-
-        //firestore
-    // this.firestore.collection("categorias").doc("users").collection(this.user.uid).snapshotChanges().subscribe(actionArray => {
-    //   this.listCategorias = actionArray.map(item => {
-    //     return {
-    //       id: item.payload.doc.id,
-    //       ...item.payload.doc.data()
-    //     } as any;
-    //   })
-    // });
   }
 
   carregaAnotacoes() {
         //database
-    this.db.list('anotacoes/').valueChanges().subscribe(item => {
-      this.listCategorias = item;
+    this.db.list('anotacoes/users/' + this.user.uid + "/").valueChanges().subscribe(item => {
+      this.listAnotacoes = item;
     });
-
-        //firestore
-    // this.firestore.collection("anotacoes").snapshotChanges().subscribe(actionArray => {
-    //   this.listAnotacoes = actionArray.map(item => {
-    //     return {
-    //       id: item.payload.doc.id,
-    //       ...item.payload.doc.data()
-    //     } as any;
-    //   })
-    // });
   }
 
 

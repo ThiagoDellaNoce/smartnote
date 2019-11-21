@@ -7,7 +7,8 @@ import { AddComponent } from './add/add.component';
 const anotacaoRoutes = [
     {path: '', component: AnotacaoComponent },
     {path: 'lista', component: ListaComponent},
-    {path: 'add', component: AddComponent}
+    {path: 'add', component: AddComponent},
+    { path: ':id', component: AnotacaoComponent, children:[ { path: '', component: AnotacaoComponent } ] }
 ];
 
 @NgModule({

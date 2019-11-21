@@ -20,19 +20,19 @@
 <div>
     <div class="row">
 
-        <span *ngIf="!listCategorias" style="text-align: center;">
+        <span *ngIf="listCategorias?.length == 0" style="text-align: center;">
             <p>
                 Nenhuma matéria<br>
                 <a routerLink="/principal/categoria/add">criar matéria</a>
             </p>
         </span>
-        <div class="col s6 m2" *ngFor="let categoria of listCategorias | slice:0:2">
+        <div class="col s6 m2" *ngFor="let item of listCategorias | slice:0:2">
             <div class="card" >
 
-                <a routerLink="/principal/categoria/{{categoria.id}}">
+                <a routerLink="/principal/categoria/{{item.id}}">
                     <div class="card-image">
                         <img src="https://library.harvard.edu/sites/default/files/styles/carousel_1200_x_900/public/poets_blue.jpg?itok=jxricHTp">
-                        <span class="card-title">{{ categoria.nome }}</span>
+                        <span class="card-title">{{ item.nome }}</span>
                     </div>
                 </a>
 
@@ -41,7 +41,7 @@
                 </a>
 
                 <div class="card-content">
-                    <p>{{categoria.professor}}</p>
+                    <p>{{item.professor}}</p>
                 </div>
             </div>
         </div>
@@ -61,21 +61,21 @@
 
 <!-- Lista de anotações -->
 <div>
-    <span *ngIf="!listCategorias" style="text-align: center;">
+    <span *ngIf="listAnotacoes?.length == 0" style="text-align: center;">
         <p>
-            Nenhuma matéria<br>
-            <a routerLink="/principal/categoria/add">criar matéria</a>
+            Nenhuma anotação<br>
+            <a routerLink="/principal/anotacao/add">criar anotação</a>
         </p>
     </span>
     <ul class="collection">
 
-        <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes">
-            <a routerLink="anotacao">
-                <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
-                <span class="title">{{ anotacao.nome }}</span>
-                <a routerLink="anotacao" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
-            </a>
-        </li>
+      <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes | slice:0:5">
+        <a routerLink="/principal/anotacao/{{ anotacao.id}}">
+          <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
+          <span class="title">{{ anotacao.nome }}</span>
+          <a routerLink="/principal/anotacao/{{ anotacao.id}}" class="secondary-content" style="color:#82b1ff"><i class="material-icons">share</i></a>
+        </a>
+      </li>
 
     </ul>
 </div>
