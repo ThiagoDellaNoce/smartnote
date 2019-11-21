@@ -29,7 +29,7 @@
         <div class="col s6 m2" *ngFor="let categoria of listCategorias | slice:0:2">
             <div class="card" >
 
-                <a routerLink="/principal/categoria/">
+                <a routerLink="/principal/categoria/{{categoria.id}}">
                     <div class="card-image">
                         <img src="https://library.harvard.edu/sites/default/files/styles/carousel_1200_x_900/public/poets_blue.jpg?itok=jxricHTp">
                         <span class="card-title">{{ categoria.nome }}</span>
@@ -45,7 +45,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -69,7 +68,7 @@
         </p>
     </span>
     <ul class="collection">
-        
+
         <li class="collection-item avatar" style="min-height: 55px !important;" *ngFor="let anotacao of listAnotacoes">
             <a routerLink="anotacao">
                 <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">

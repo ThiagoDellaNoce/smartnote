@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 
 declare var $: any;
 
@@ -16,28 +16,32 @@ export class AddComponent implements OnInit {
 
   user;
 
-  constructor(private firestore: AngularFirestore,
-    private router: Router,
-    public afAuth: AngularFireAuth) { }
+  itemRef: AngularFireObject<any>;
+  item: Observable<any>;
+
+  constructor(private router: Router,
+    public afAuth: AngularFireAuth,
+    private db: AngularFireDatabase) { }
 
   ngOnInit() {
     this.user = this.afAuth.auth.currentUser;
   }
 
   onSubmit() {
+    let itemId = this.db.createPushId();
+
     let categoriaData = {
+      id: itemId,
       nome: $("#nome").val(),
       professor: $("#professor").val()
     };
 
-    // this.firestore.collection("categorias/" + this.user.uid + "/").add(categoria)
-    //   .then(item => {
-    //     this.router.navigate(['/principal/categoria/lista']);
-    //   });
-    this.firestore.collection("categorias").doc("users").collection(this.user.uid).add(categoriaData)
-      .then(item => {
-        this.router.navigate(['/principal/categoria/lista']);
-      });
+        //database
+    this.itemRef = this.db.object('categorias/users/' + this.user.uid + "/" + itemId);
+    this.item = this.itemRef.valueChanges();
+    this.itemRef.set(categoriaData).then(item => {
+      this.router.navigate(['/principal/categoria/lista']);
+    });
   };
 
 }

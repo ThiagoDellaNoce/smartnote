@@ -11,7 +11,8 @@
             <div class="parallax"><img style="opacity: 1;" src="https://cdn.pixabay.com/photo/2018/09/09/13/32/fantasy-3664586_960_720.jpg"></div>
         </div>
         <div class="col s12 m12">
-            <h5>Matéria 1</h5>
+            <h5>{{ item.nome }}</h5>
+            <p>{{item.professor}}</p>
         </div>
     </div>
 </div>
@@ -19,7 +20,7 @@
 <!-- lista de anotações -->
 <div>
     <ul class="collection">
-    
+
         <li class="collection-item avatar" style="min-height: 55px !important;">
             <a routerLink="/principal/anotacao">
                 <img src="assets/img/note.png" style="position:absolute; left:0px; top:5px">
