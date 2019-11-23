@@ -1,25 +1,55 @@
 <div class="container" style="margin-top:90px;">
     <div class="row">
         <div class="col s12 m6 offset-m3">
-         
+
             <div class="card-panel z-depth-5">
-                
-                <h4 class="center">Smartnote</h4>	 
-                
+
+                <h4 class="center">Smartnote</h4>
+
                 <div class="row">
-                        
+
                     <div class="container">
 
-                        <h5>Faça Login:</h5>
-                        <div (click)="loginWithGoogle()" class="google-btn">
-                            <div class="google-icon-wrapper">
-                                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                        <!-- <h5>Faça Login:</h5> -->
+
+                        <div class="row">
+                          <form class="col s12">
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                              </div>
                             </div>
-                            <p class="btn-text"><b>Sign in with google</b></p>
+
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                              </div>
+                            </div>
+
+                          </form>
+                        </div>
+
+                        <div class="row center">
+                          <div (click)="loginEmailPasswd()" class="google-btn col s12 blue darken-3">
+                              <p class="btn-text">Entrar</p>
+                          </div>
+                          <p style="float: left;"><a routerLink="/login/signup">Criar conta</a></p>
+                          <p (click)="esqueciSenha()" style="float: right;">Esqueceu a senha?</p>
+                        </div>
+
+                        <div class="row blue">
+                          <div (click)="loginWithGoogle()" class="google-btn col s12" style="float: right;">
+                              <div class="google-icon-wrapper">
+                                  <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                              </div>
+                              <p class="btn-text" style="float: right;">Entrar com google</p>
+                          </div>
                         </div>
 
                     </div>
-                        
+
                 </div><!--row-->
             </div><!--card-->
 

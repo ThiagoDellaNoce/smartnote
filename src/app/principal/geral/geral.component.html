@@ -82,7 +82,10 @@
 
 <!-- Floating button -->
 <div class="fixed-action-btn">
-    <a routerLink="/principal/anotacao/add" class="btn-floating btn-large blue accent-1">
+    <a *ngIf="listCategorias?.length == 0" routerLink="/principal/categoria/add" class="btn-floating btn-large blue accent-1">
+        <i class="large material-icons">add</i>
+    </a>
+    <a *ngIf="listCategorias?.length > 0" routerLink="/principal/anotacao/add" class="btn-floating btn-large blue accent-1">
         <i class="large material-icons">add</i>
     </a>
 </div>

@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   constructor(public afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
-    
+
     $('.materialboxed').materialbox();
   }
 
@@ -28,20 +28,31 @@ export class SigninComponent implements OnInit {
         }
     })
     .catch(error => console.log(error));
-    
+
   }
-  
+
   logado() {
     this.router.navigate(['/principal']);
   }
 
   loginEmailPasswd () {
 
-    let email = $("#login").val();
+    let email = $("#email").val();
     let senha = $("#password").val();
 
-    this.afAuth.auth.signInWithEmailAndPassword(email, senha);
+    this.afAuth.auth.signInWithEmailAndPassword(email, senha)
+      .then((credential) =>  {
+        if(credential.user) {
+          this.logado();
+        }
+      });
 
+  }
+
+  esqueciSenha() {
+    let email = $("#email").val();
+
+    this.afAuth.auth.sendPasswordResetEmail(email);
   }
 
   logout() {
