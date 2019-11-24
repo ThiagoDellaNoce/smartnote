@@ -29,14 +29,33 @@
                       <label for="texto">Texto</label>
                     </div>
 
-                    <div class="input-field col s12 m12">
-                        <select id="categoriaId" class="form-control">
-                            <option *ngFor="let item of list" value= {{item.id}}>
-                                {{item.nome}}
-                            </option>
-                        </select>
+                    <div class="file-field input-field col s12 m12">
+                      <div class="btn">
+                        <span>Arquivos "img"</span>
+                        <input type="file" multiple (change)="uploadFile($event)">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload um ou mais arquivos">
+                      </div>
                     </div>
 
+                    <div *ngIf="mostraLoader" class="progress col s12">
+                        <div class="determinate" [style.width.%]="uploadPorCento"></div>
+                    </div>
+
+                    <div class="input-field col s12 m12">
+                      <select id="categoriaId" class="form-control">
+                        <option *ngFor="let item of list" value= {{item.id}}>
+                          {{item.nome}}
+                        </option>
+                      </select>
+                    </div>
+
+                    <div *ngIf="imagensBool">
+                      <a *ngFor="let image of images" [href]="image">
+                        <img [src]="image" class="col s4 m3">
+                      </a>
+                    </div>
                 </div>
 
             </form>
@@ -46,7 +65,7 @@
 </div>
 
 <!-- Floating button -->
-<div class="fixed-action-btn">
+<div *ngIf="!mostraLoader" class="fixed-action-btn">
     <a class="btn-floating btn-large blue accent-1">
         <i (click)="onSubmit()" class="large material-icons">check</i>
     </a>

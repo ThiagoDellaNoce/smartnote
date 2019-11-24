@@ -21,7 +21,9 @@ export class AnotacaoComponent implements OnInit {
   item: any;
   itemCat: any;
   categoriaId: any;
-
+  
+  images;
+  
   constructor(private route: ActivatedRoute,
     private router: Router,
     private db: AngularFireDatabase,
