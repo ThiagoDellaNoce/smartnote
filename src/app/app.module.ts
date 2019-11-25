@@ -20,10 +20,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { AppRoutingModule } from './app.routing.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,8 @@ import { AppRoutingModule } from './app.routing.module';
     ModalModule.forRoot(),
 
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [AngularFireAuthGuard,
